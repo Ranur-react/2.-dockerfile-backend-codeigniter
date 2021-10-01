@@ -42,9 +42,9 @@ docker run -d -p 87:8000 --name newname imagesfrom
 #### 4. Upload images yang sudah dibuat ke dalam dockerhub agar dapat digunakan kembali nanti
 
 ```
-docker tag namaimageslocal:tag newreponame:tag
+docker tag namaimageslocal:tag account/newreponame:tag
 docker login -u dockeracckount
-docker push newreponame:tag
+docker push account/newreponame:tag
 ```
 
 #### 5. Stop container tes yang udah jalan dengna perintah berikut
@@ -112,3 +112,20 @@ docker-compose up
 perintah ini di jalankan di dalam folder yang sama dengan doker-compose.YML
 
 ### 7. container yang sudah berjalan sudah dapat digunakan
+
+#### Conclused
+
+1. creat Dockerfile
+2. build images with commadn "docker build . newnameimages"'
+3. tes images with create container "docker run -d -p 88:8000 --name newnamecontainer"
+4. push images to repo
+
+- "docker tag localname account/publicname"
+- "docker -u account "
+- "docker push account/publicname"
+
+5. create multple images with docker-compose
+
+- create docker-compose.YML and set configure network on files
+- create new network relevant with that configurations YML files with commadn "docker network create networkname"
+- runn docker-compose.YML files with command "docker-compose up"
